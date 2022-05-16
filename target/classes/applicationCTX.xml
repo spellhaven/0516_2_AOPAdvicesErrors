@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy> <!-- 이걸 쓰면 L9의 logAop라는 Bean이 (뭐의??) 프록시가 된다. (어디로??) 오는 명령들은 다 얘를 거쳐야 한다. ㅋ, -->
+	<bean id = "logAop" class = "com.spellhaven.spring0516_2.LogAop"></bean>
+		
+	<!-- aop 속성들을 0516_1처럼 여기에 줄줄 쓰지 말고, @Annotations로 간지나게 끝내 보자. -->
+		
+	
+	<bean id = "stu1" class = "com.spellhaven.spring0516_2.Student">
+		<property name="name">
+			<value>홍길동</value>
+		</property>
+		<property name="age">
+			<value>20살</value>
+		</property>
+		<property name="gradeNum">
+			<value>3학년</value>
+		</property>
+		<property name="classNum">
+			<value>8반</value>
+		</property>
+	</bean>	
+		
+	<bean id = "worker1" class = "com.spellhaven.spring0516_2.Worker">
+		<property name="name">
+			<value>이순신</value>
+		</property>
+		<property name="age">
+			<value>40살</value>
+		</property>
+		<property name="job">
+			<value>장군</value>
+		</property>
+	</bean>	
+	
+
+</beans>
